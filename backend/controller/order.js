@@ -37,7 +37,6 @@ router.post(
                 });
                 orders.push(order);
             }
-            console.log("order:", orders);
             res.status(201).json({
                 success: true,
                 orders,

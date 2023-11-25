@@ -36,7 +36,7 @@ const Payment = () => {
             description: "Thanh toán đơn hàng 4D Market",
             amount: {
               currency_code: "USD",
-              value: orderData?.totalPrice/25000,
+              value: orderData?.totalPrice/24000,
             },
           },
         ],
@@ -97,8 +97,9 @@ const Payment = () => {
   };
 
   const paymentData = {
-    amount: Math.round(orderData?.totalPrice/250),
+    amount: Math.round(orderData?.totalPrice/24000),
   };
+  console.log("amount", paymentData.amount)
 
   const paymentHandler = async (e) => {
     e.preventDefault();

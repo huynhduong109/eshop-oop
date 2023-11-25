@@ -16,7 +16,6 @@ const CreateEvent = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [tags, setTags] = useState("");
   const [originalPrice, setOriginalPrice] = useState();
   const [discountPrice, setDiscountPrice] = useState();
   const [stock, setStock] = useState();
@@ -76,7 +75,6 @@ const CreateEvent = () => {
     newForm.append("name", name);
     newForm.append("description", description);
     newForm.append("category", category);
-    newForm.append("tags", tags);
     newForm.append("originalPrice", originalPrice);
     newForm.append("discountPrice", discountPrice);
     newForm.append("stock", stock);
@@ -140,17 +138,6 @@ const CreateEvent = () => {
           </select>
         </div>
         <br />
-        <div>
-          <label className="pb-2">Mã sản phẩm</label>
-          <input
-            type="text"
-            name="tags"
-            value={tags}
-            className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            onChange={(e) => setTags(e.target.value)}
-            placeholder="Nhập mã sản phẩm sự kiện..."
-          />
-        </div>
         <br />
         <div>
           <label className="pb-2">Giá gốc</label>

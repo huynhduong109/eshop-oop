@@ -29,12 +29,6 @@ const ProductsPage = () => {
   const searchDataFilter = useSelector((state) => state?.search.searchData);
   const searchValue = useSelector((state) => state?.search.searchValue);
 
-  console.log("searchValue", searchValue);
-  console.log("data", data);
-  console.log("datatemp", datatemp);
-  console.log("searchDataFilter", searchDataFilter);
-  console.log("filteredCount", category);
-  console.log("categoryDataTest", categoryData);
 
   const handleMinPriceChange = (value) => {
     setMinPrice(value);
@@ -57,14 +51,11 @@ const ProductsPage = () => {
     if (searchDataFilter.length > 0) {
       // có data search
       filteredData = [...searchDataFilter];
-      console.log("searchDataFilter");
     } else if (categoryData && datatemp.length < 0) {
       filteredData = [...data];
-      console.log("categoryData");
     } else if (datatemp.length > 0 && categoryData) {
       // có chọn category và lọc
       filteredData = [...datatemp];
-      console.log("datatemp");
     } else {
       filteredData = [...allProducts];
       console.log("allProducts");

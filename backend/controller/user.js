@@ -107,7 +107,7 @@ router.post(
         }
     })
 );
-// activate password
+// reset password
 router.post(
     "/reset-password",
     catchAsyncErrors(async(req, res, next) => {
@@ -325,8 +325,6 @@ router.delete(
             const userId = req.user._id;
             const addressId = req.params.id;
 
-            console.log(addressId);
-
             await User.updateOne({
                 _id: userId,
             }, { $pull: { addresses: { _id: addressId } } });
@@ -401,7 +399,7 @@ router.put(
     })
 );
 
-// find user infoormation with the userId
+// find user information with the userId
 router.get(
     "/user-info/:id",
     catchAsyncErrors(async(req, res, next) => {
@@ -472,7 +470,6 @@ router.post("/forgot-password", async(req, res, next) => {
         const userEmail = await User.findOne({ email });
 
         if (!userEmail) {
-            // Email đã tồn tại trong dữ liệu
             return next(new ErrorHandler("Người dùng không tồn tại", 400));
         }
         const user = {

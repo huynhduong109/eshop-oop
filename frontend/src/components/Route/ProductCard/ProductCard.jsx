@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import {
   AiFillHeart,
-  AiFillStar,
   AiOutlineEye,
   AiOutlineHeart,
   AiOutlineShoppingCart,
-  AiOutlineStar,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { backend_url } from "../../../server";
@@ -72,7 +70,7 @@ const ProductCard = ({ data, isEvent }) => {
 
   return (
     <>
-      <div className="w-full h-[370px] bg-white rounded-lg shadow-sm p-3 relative cursor-pointer transform transition-transform hover:translate-y-[-5px] hover:shadow-md transition-shadow">
+      <div className="w-full h-[370px] bg-white rounded-lg shadow-sm p-3 relative cursor-pointer hover:border border-blue-500 hover:shadow-md transition-shadow">
         <div className="discount-percentage">
           {discountPercentage > 0 && (
             <span className="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded-tl-md">
